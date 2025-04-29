@@ -83,7 +83,6 @@ public class ExcelReader {
             }
             return true;
         } catch (Exception exception) {
-            System.out.println("removeCellExcelFile2() 에러 발생");
             exception.printStackTrace();
             return false;
         }
@@ -122,7 +121,7 @@ public class ExcelReader {
             return needCellsIdx;
 
         } catch (Exception e) {
-            System.out.println("getNeedCellIdxList() 에러 발생");
+            e.printStackTrace();
             return null;
         }
     }
@@ -232,6 +231,7 @@ public class ExcelReader {
             workbook.write(fos); // 실제로 액셀 파일 바탕화면에 생성.
             System.out.println("수정된 파일이 다음 경로에 저장되었습니다 : " + newFilePath);
         } catch (Exception exception) {
+            exception.printStackTrace();
             return false;
         }
 
